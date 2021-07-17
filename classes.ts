@@ -1,4 +1,4 @@
-class UserAccount {
+abstract class UserAccount {
   public name: string
   protected age: number
 
@@ -38,11 +38,11 @@ class CharAccout extends UserAccount {
   }
 }
 
-const marcelo = new UserAccount('Marcelo', 30)
+// const marcelo = new UserAccount('Marcelo', 30) // Cannot create an instance of an abstract class.ts(2511)
 
-console.log(marcelo)
+// console.log(marcelo)
 // console.log(marcelo.age) // Property 'age' is protected and only accessible within class 'UserAccount' and its subclasses.ts(2445)
-marcelo.logDetails()
+// marcelo.logDetails()
 
 const freires = new CharAccout('Freire', 31, 'freires', 99)
 // freires.nickname = 'marcelofreires' // Property 'nickname' is private and only accessible within class 'CharAccout'.ts(2341)
