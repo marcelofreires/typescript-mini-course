@@ -37,3 +37,15 @@ const newEdition: DefinitiveEdition = {
   originalGame: ori,
   newContent: ['New areas', 'New abilities', 'more story sequences', 'multiple difficult modes', 'Fast travel between areas']
 }
+
+class CreateGame implements Game {
+  title: string
+  description: string
+  genre: string
+
+  constructor(title: string, description: string, genre: string) {
+    this.title = title
+    this.description = description
+    this.genre = genre
+  }
+}
