@@ -13,7 +13,7 @@ class UserAccount {
 }
 
 class CharAccout extends UserAccount {
-  nickname: string
+  private nickname: string
   level: number
 
   constructor(name: string, age: number, nickname: string, level: number) {
@@ -21,6 +21,10 @@ class CharAccout extends UserAccount {
 
     this.nickname = nickname
     this.level = level
+  }
+
+  logCharDetails(): void {
+    console.log(`The user ${this.name} has the char ${this.nickname} at level ${this.level}`)
   }
 }
 
@@ -31,5 +35,7 @@ console.log(marcelo.age)
 marcelo.logDetails()
 
 const freires = new CharAccout('Freire', 31, 'freires', 99)
+// freires.nickname = 'marcelofreires' // Property 'nickname' is private and only accessible within class 'CharAccout'.ts(2341)
 console.log(freires)
 freires.logDetails()
+freires.logCharDetails()
