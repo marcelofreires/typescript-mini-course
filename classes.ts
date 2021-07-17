@@ -23,6 +23,11 @@ class CharAccout extends UserAccount {
     this.level = level
   }
 
+  get getLevel() {
+    console.log(`The type of level is ${typeof this.level}`)
+    return this.level
+  }
+
   logCharDetails(): void {
     console.log(`The user ${this.name} is ${this.age} has the char ${this.nickname} at level ${this.level}`)
   }
@@ -41,3 +46,4 @@ console.log(freires)
 console.log(freires.level)
 freires.logDetails()
 freires.logCharDetails()
+console.log(freires.getLevel)
