@@ -28,6 +28,11 @@ class CharAccout extends UserAccount {
     return this.level
   }
 
+  set setNickname(nickname: string) {
+    this.nickname = nickname
+    console.log(`The new nickname is ${this.nickname}`)
+  }
+
   logCharDetails(): void {
     console.log(`The user ${this.name} is ${this.age} has the char ${this.nickname} at level ${this.level}`)
   }
@@ -47,3 +52,4 @@ console.log(freires.level)
 freires.logDetails()
 freires.logCharDetails()
 console.log(freires.getLevel)
+freires.setNickname = 'mfreires'
