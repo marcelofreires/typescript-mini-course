@@ -14,7 +14,7 @@ class UserAccount {
 
 class CharAccout extends UserAccount {
   private nickname: string
-  level: number
+  readonly level: number
 
   constructor(name: string, age: number, nickname: string, level: number) {
     super(name, age)
@@ -37,5 +37,7 @@ marcelo.logDetails()
 const freires = new CharAccout('Freire', 31, 'freires', 99)
 // freires.nickname = 'marcelofreires' // Property 'nickname' is private and only accessible within class 'CharAccout'.ts(2341)
 console.log(freires)
+// freires.level = 100 // Cannot assign to 'level' because it is a read-only property.ts(2540)
+console.log(freires.level)
 freires.logDetails()
 freires.logCharDetails()
