@@ -1,5 +1,5 @@
 class UserAccount {
-  name: string
+  public name: string
   age: number
 
   constructor(name: string, age: number) {
