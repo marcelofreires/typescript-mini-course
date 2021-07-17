@@ -1,6 +1,6 @@
 class UserAccount {
   public name: string
-  age: number
+  protected age: number
 
   constructor(name: string, age: number) {
     this.name = name
@@ -24,14 +24,14 @@ class CharAccout extends UserAccount {
   }
 
   logCharDetails(): void {
-    console.log(`The user ${this.name} has the char ${this.nickname} at level ${this.level}`)
+    console.log(`The user ${this.name} is ${this.age} has the char ${this.nickname} at level ${this.level}`)
   }
 }
 
 const marcelo = new UserAccount('Marcelo', 30)
 
 console.log(marcelo)
-console.log(marcelo.age)
+// console.log(marcelo.age) // Property 'age' is protected and only accessible within class 'UserAccount' and its subclasses.ts(2445)
 marcelo.logDetails()
 
 const freires = new CharAccout('Freire', 31, 'freires', 99)
