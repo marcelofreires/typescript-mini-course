@@ -2,7 +2,7 @@ interface Game {
   title: string
   description: string
   readonly genre: string
-  platform: string[]
+  platform?: string[]
   getSimilars: (title: string) => void
 }
 
