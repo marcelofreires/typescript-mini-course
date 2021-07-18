@@ -1,11 +1,11 @@
 function useState() {
-  let state: number
+  let state: number | string
 
   function getState() {
     return state
   }
 
-  function setState(newState: number) {
+  function setState(newState: number | string) {
     state = newState
   }
 
@@ -15,4 +15,7 @@ function useState() {
 const newState = useState()
 
 newState.setState(123)
+console.log(newState.getState())
+
+newState.setState('foo')
 console.log(newState.getState())
