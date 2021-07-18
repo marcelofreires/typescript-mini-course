@@ -4,7 +4,9 @@
 // V => Value
 // E => Element
 
-function useState<S extends number | string>() {
+type UseStateProps = number | string
+
+function useState<S extends UseStateProps = string>() {
   let state: S
 
   function getState() {
@@ -18,7 +20,7 @@ function useState<S extends number | string>() {
   return { getState, setState }
 }
 
-const newState = useState<string>()
+const newState = useState()
 
 // newState.setState(123) // Argument of type 'number' is not assignable to parameter of type 'string'.ts(2345)
 // console.log(newState.getState())
