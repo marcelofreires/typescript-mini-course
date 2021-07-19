@@ -2,17 +2,20 @@
 // @Selector
 // @useState("qwert")
 
-// Factory
-function Logger(prefix: string) {
-  return (target) => {
-    console.log(`${prefix} - ${target}`)
+// Class decorator
+function setAPIVersion(apiVersion: string) {
+  return (constructor) => {
+    return class extends constructor {
+      version = apiVersion
+    }
   }
 }
 
-@Logger('Awesome')
-class Foo {}
+@setAPIVersion('1.0.0')
+class API {}
 
-// Class decorator
+console.log('API =>', new API())
+
 // Property decorator
 // Method decorator
 // Parameter decorator
