@@ -2,11 +2,14 @@
 // @Selector
 // @useState("qwert")
 
-function log(target) {
-  console.log(target)
+// Factory
+function Logger(prefix: string) {
+  return (target) => {
+    console.log(`${prefix} - ${target}`)
+  }
 }
 
-@log
+@Logger('Awesome')
 class Foo {}
 
 // Class decorator
