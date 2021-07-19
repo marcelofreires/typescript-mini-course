@@ -20,3 +20,10 @@ console.log('todo', todo)
 
 console.log('newTodo', newTodo)
 
+// Pick
+type TodoPreview = Pick<Todo, 'title' | 'completed'>
+
+const todoQuickview: TodoPreview = {
+  title: 'Ler Neuromancer de William Gibson',
+  completed: false,
+}
