@@ -27,3 +27,11 @@ const todoQuickview: TodoPreview = {
   title: 'Ler Neuromancer de William Gibson',
   completed: false,
 }
+
+// Omit
+type AnotherTodoPreview = Omit<Todo, 'description'>
+
+const anotherTodoPreview: AnotherTodoPreview = {
+  title: 'Ler Eu Sou a Lenda de Richard Matheson',
+  completed: false,
+}
