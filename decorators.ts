@@ -51,5 +51,36 @@ const movie = new Movie('Interstellar')
 // console.log(movie)
 
 // Method decorator
+function delay(ms: number) {
+  return (target: any, key: string, descriptor: PropertyDescriptor) {
+    const originalMethod = descriptor.value
+
+    descriptor.value = function(...args) {
+      console.log(`Waiting for ${ms}...`)
+      setTimeout(() => {
+        originalMethod.apply(this, args)
+      }, ms)
+
+      return descriptor
+    }
+  }
+}
+
+class Greeter {
+  greeting: string
+
+  constructor(greeting: string) {
+    this.greeting = greeting
+  }
+
+  @delay(1000)
+  greet() {
+    console.log(`Hello ${this.greeting}!`)
+  }
+}
+
+const user = new Greeter('Marcelo')
+user.greet()
+
 // Parameter decorator
 // Acessor decorator
